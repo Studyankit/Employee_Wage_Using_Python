@@ -26,3 +26,16 @@ def Daily_Wage():
 
 
 print(Daily_Wage())
+
+
+# Uc3 - Part time and full time
+part_time_hour = 5
+
+
+def Part_Time_Wage():
+    part_time = part_time_hour * wage_per_hour
+    print("Part time wage of an employee {}".format(part_time))
+
+
+print(Part_Time_Wage())
+
