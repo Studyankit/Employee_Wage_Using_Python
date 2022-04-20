@@ -13,3 +13,16 @@ def Attendance():
 
 
 print(Attendance())
+
+# UC2  - Daily Wage
+
+wage_per_hour = 20
+full_day_hour = 8
+
+
+def Daily_Wage():
+    daily_wage = wage_per_hour * full_day_hour
+    print(f"Full day wage of an employee {daily_wage}")
+
+
+print(Daily_Wage())
