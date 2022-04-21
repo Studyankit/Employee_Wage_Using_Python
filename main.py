@@ -4,15 +4,14 @@ print("Welcome to Employee Wage Computation")
 
 wage_per_hour = 20
 full_day_hour = 8
-working_days = 20
-part_time_hour = 5
-working_day_per_month = 20
-emp_hrs = 0
+part_time_hour = 6
+WORKING_DAY_PER_MONTH = 20
+TOTAL_WORKING_HRS = 100
 
 
-# UC1 - Employee Attendance
-
-
+# # UC1 - Employee Attendance
+#
+#
 def Attendance(present=0, absent=0):
     for i in range(20):
         attendance_check = random.randint(0, 2)
@@ -41,25 +40,32 @@ def Daily_Wage_Ft_Pt():
     emp_check = random.randint(0, 2)
     if emp_check == 1:
         part_time = part_time_hour * wage_per_hour
-        return part_time
+        return part_time, part_time_hour
     elif emp_check == 2:
         daily_wage = wage_per_hour * full_day_hour
-        return daily_wage
+        return daily_wage, full_day_hour
     else:
-        return 0
+        return 0, 0
 
 
-# Uc4 - Wage for month
+# Uc4,5,6.. - Wage for month  with total working hrs
 
 
 def Monthly_Wage():
     month_wage = 0
+    total_hrs = 0
     for day in range(1, 21):
         emp_data = {"Day": day, "Wage": Daily_Wage_Ft_Pt()}
         print(emp_data)
-        sum_wage = emp_data["Wage"]
+        sum_wage = emp_data["Wage"][0]
         month_wage += sum_wage
+        total_hrs += emp_data["Wage"][1]
+        if total_hrs >= 100:
+            break
     print(month_wage)
+    print(total_hrs)
 
 
 Monthly_Wage()
+
+# UC6 - Cal total hr worked with monthly wage
