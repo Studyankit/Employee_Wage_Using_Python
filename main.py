@@ -9,10 +9,17 @@ WORKING_DAY_PER_MONTH = 20
 TOTAL_WORKING_HRS = 100
 
 
-# # UC1 - Employee Attendance
-#
-#
+# UC1 - Employee Attendance
+
+
 def Attendance(present=0, absent=0):
+    """
+
+    :param present: Employee present for how many days
+    :param absent: Employee absent for how many days
+    :return: No days present
+    """
+
     for i in range(20):
         attendance_check = random.randint(0, 2)
         if attendance_check == 1:
@@ -25,6 +32,12 @@ def Attendance(present=0, absent=0):
 # UC2  - Daily Wage
 
 def Daily_Wage():
+
+    """
+    Calculate daily wage for an employee
+
+    :return: return daily wage
+    """
     daily_wage = wage_per_hour * full_day_hour
     return daily_wage
 
@@ -32,11 +45,22 @@ def Daily_Wage():
 # Uc3 - Part time and full time
 
 def Part_Time_Wage():
+
+    """
+    Calculate Part-time wage of an employee with work hr 6
+
+    :return: part- time wage of emp
+    """
     part_time = part_time_hour * wage_per_hour
     return part_time
 
 
 def Daily_Wage_Ft_Pt():
+    """
+    Calculate Daily Wage according to no of hr worked
+
+    :return: Wage according to parT time hr or full time hr
+    """
     emp_check = random.randint(0, 2)
     if emp_check == 1:
         part_time = part_time_hour * wage_per_hour
@@ -52,6 +76,11 @@ def Daily_Wage_Ft_Pt():
 
 
 def Monthly_Wage():
+    """
+    Calculate monthly wage with storing the data in dictionary with his regular days work and attendance
+
+    :return: monthly wage with the total hrs worked
+    """
     month_wage = 0
     total_hrs = 0
     for day in range(1, 21):
@@ -63,9 +92,8 @@ def Monthly_Wage():
         if total_hrs >= 100:
             break
     print(month_wage)
-    print(total_hrs)
+    print(total_hrs) # Uc6 - total hr worked
 
 
 Monthly_Wage()
 
-# UC6 - Cal total hr worked with monthly wage
